@@ -1,14 +1,14 @@
 /* components/notifications/styles/NotificationList.css */
-.notification-container {
-  display: flex;
-  flex-direction: column;
+.notificationContainer {
+  max-width : 700px;
+  margin-inline: auto;
   gap: 1rem;
   padding: 1rem 0;
 }
 
-.notification-item {
-  display: flex;
-  flex-direction: column;
+.notificationItem {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
   gap: 0.5rem;
   padding: 1.5rem;
   border: 1px solid #e2e8f0;

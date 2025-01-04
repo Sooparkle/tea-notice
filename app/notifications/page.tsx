@@ -9,18 +9,26 @@ import Loading from "../loading";
 export default async function Notification({
   searchParams,
 }:{
-  searchParams : {
+  searchParams : Promise<{
     page? : string,
     search? : string
-  }
+  }>;
 }) {
-const page = Number(searchParams.page) || 1 ;
+  const awaitSearchParams = await searchParams;
 
-const {notifications, totalCount, totalPages} = await getNotifications({
-  page,
-  limit : 10,
-  keyword : searchParams.search ?? ""
-})
+  const page = Number(awaitSearchParams?.page) || 1 ;
+  const keyword = awaitSearchParams?.search || "";
+
+  const {notifications, totalCount, totalPages} = await getNotifications({
+    page,
+    limit : 10,
+    keyword,
+  });
+
+  const baseUrl = keyword ?
+  `/notification?search=${encodeURIComponent(keyword)}` :
+  '/notifications';
+
 
 return(
   <main>
@@ -34,10 +42,7 @@ return(
       <ServerPagination 
         currentPage={page} 
         totalPages={totalPages}
-        baseUrl={searchParams.search ?
-          `/notification?search=${searchParams.search}` :
-          '/notifications'
-        }
+        baseUrl={baseUrl}
       />
     </Suspense>
   </main>

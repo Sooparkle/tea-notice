@@ -1,7 +1,7 @@
 // components/notifications/NotificationList.tsx
 import Link from 'next/link';
 import { Notification } from '@/types/notification';
-// import './styles/notificationList.module.css';
+import styles from '@/components/notificiations/styles/NotificationList.module.css'
 
 interface NotificationListProps {
   notifications: Notification[];
@@ -9,19 +9,19 @@ interface NotificationListProps {
 
 export default function NotificationList({ notifications }: NotificationListProps) {
   return (
-    <div className="notification-container">
+    <div className={styles.notificationContainer}>
       {notifications.map((notification) => (
         <Link 
           href={`/notifications/${notification.id}`} 
           key={notification.id}
-          className="notification-item"
+          className={styles.notificationItem}
         >
           <div className="notification-header">
             <div className="notification-title-area">
               {notification.is_pinned && (
                 <span className="notification-badge">공지</span>
               )}
-              <h2 className="notification-title">{notification.title}</h2>
+              <p className="notification-title">{notification.title}</p>
             </div>
             {notification.category && (
               <span className="notification-category">{notification.category}</span>
