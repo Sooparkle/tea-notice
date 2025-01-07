@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import styles from "@/components/notificiations/styles/NotificationList.module.css"
 
 export default function ServerPagination({
   currentPage,
@@ -19,7 +19,9 @@ export default function ServerPagination({
 
     return (
       
-      <nav >
+      <nav 
+        className={styles.notiticationPageContainer}
+      >
         {
           currentPage > 1 &&(
             <Link 
