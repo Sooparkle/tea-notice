@@ -16,24 +16,26 @@ export default function NotificationList({ notifications }: NotificationListProp
           key={notification.id}
           className={styles.notificationItem}
         >
-          <div className="notification-header">
-            <div className="notification-title-area">
+          <div className={styles.notificationHeader}>
+            <div className={styles.notificationTitleArea}>
               {notification.is_pinned && (
-                <span className="notification-badge">공지</span>
+                <span className={styles.notificationBadge}>공지</span>
               )}
-              <p className="notification-title">{notification.title}</p>
+              <p className={styles.notificationTitle}>{notification.title}</p>
             </div>
             {notification.category && (
-              <span className="notification-category">{notification.category}</span>
+              <span className={styles.notificationCategory}>{notification.category}</span>
             )}
           </div>
           
-          <div className="notification-meta">
-            <div className="notification-info">
-              <span className="notification-views">
+          <div className={styles.notificationMeta}>
+
+            <div className={styles.notificationInfo}>
+              <span className={styles.notificationViews}>
                 조회수 {notification.view_count.toLocaleString()}
               </span>
-              <time className="notification-date">
+            
+              <time className={styles.notificationDate}>
                 {new Date(notification.created_at).toLocaleDateString('ko-KR', {
                   year: 'numeric',
                   month: 'long',
@@ -41,6 +43,7 @@ export default function NotificationList({ notifications }: NotificationListProp
                 })}
               </time>
             </div>
+
           </div>
         </Link>
       ))}

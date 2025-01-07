@@ -1,5 +1,4 @@
 // app/notifications/loading.tsx
-import './styles/loading.module.css';
 
 export default function Loading() {
   return (

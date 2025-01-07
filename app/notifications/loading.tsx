@@ -1,6 +1,5 @@
 // app/notifications/loading.tsx
 
-import "@/app/notifications/notification.module.css"
 
 export default function NotificiationLoading() {
   return (

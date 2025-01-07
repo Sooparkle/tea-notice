@@ -18,26 +18,26 @@
   transition: all 0.2s ease;
 }
 
-.notification-item:hover {
+.notificationItem:hover {
   border-color: #3182ce;
   background-color: #f8fafc;
 }
 
-.notification-header {
+.notificationHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
 }
 
-.notification-title-area {
+.notificationTitleArea {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   flex: 1;
 }
 
-.notification-badge {
+.notificationBadge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   background-color: #ff4757;
@@ -47,14 +47,14 @@
   border-radius: 4px;
 }
 
-.notification-title {
+.notificationTitle {
   font-size: 1.125rem;
   font-weight: 500;
   color: #1a202c;
   margin: 0;
 }
 
-.notification-category {
+.notificationCategory {
   font-size: 0.875rem;
   color: #4a5568;
   background-color: #edf2f7;
@@ -62,30 +62,21 @@
   border-radius: 4px;
 }
 
-.notification-meta {
+.notificationMeta {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.notification-info {
+.notificationInfo {
   display: flex;
   gap: 1rem;
   font-size: 0.875rem;
   color: #718096;
 }
 
-.notification-views::before {
-  content: '👁️';
-  margin-right: 0.25rem;
-}
 
-.notification-date::before {
-  content: '📅';
-  margin-right: 0.25rem;
-}
-
-.notification-empty {
+.notificationEmpty {
   text-align: center;
   padding: 3rem 0;
   color: #718096;
@@ -97,39 +88,51 @@
 
 /* 반응형 디자인 */
 @media (max-width: 640px) {
-  .notification-header {
+  .notificationHeader {
     flex-direction: column;
   }
 
-  .notification-info {
+  .notificationInfo {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
 
 /* 다크모드 지원 (선택사항) */
-@media (prefers-color-scheme: dark) {
-  .notification-item {
+/* @media (prefers-color-scheme: dark) {
+  .notificationItem {
     border-color: #2d3748;
   }
 
-  .notification-item:hover {
+  .notificationItem:hover {
     border-color: #3182ce;
     background-color: #1a202c;
   }
 
-  .notification-title {
+  .notificationTitle {
     color: #f7fafc;
   }
 
-  .notification-category {
+  .notificationCategory {
     background-color: #2d3748;
     color: #e2e8f0;
   }
 
-  .notification-empty {
+  .notificationEmpty {
     background-color: #1a202c;
     border-color: #2d3748;
     color: #e2e8f0;
-  }
+  } 
+} */
+
+
+
+/* 페이지 CSS 영역 */
+.notiticationPageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: 1.125rem;
+  gap: 2rem;
 }
