@@ -2,7 +2,7 @@
 import searchNotifications from "@/app/actions/notifications";
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useState, useTransition } from "react";
-
+import styles from "@/components/notificiations/styles/NotificationList.module.css";
 
 export default function SearchForm() {
   const router = useRouter();
@@ -10,6 +10,7 @@ export default function SearchForm() {
   const searchParams = useSearchParams();
   const [ isPending, startTransition ] = useTransition();
   const [ search, setSearch ] = useState(searchParams.get('search') ?? '');
+
   
   const createQueryString = useCallback(
     (name : string, value : string) => {
@@ -44,13 +45,17 @@ export default function SearchForm() {
 
   return(
     <form
+      className={styles.notificationSearchContainer}
       onSubmit={handleSubmit}
     >
-      <div>
+      <div
+      
+      >
         <input 
         type="search"
         name="search"
         value={search}
+        placeholder="찾고싶은 제목 입력"
         onChange={(e) => handleSearchChange(e.target.value)}
       />
       <button>

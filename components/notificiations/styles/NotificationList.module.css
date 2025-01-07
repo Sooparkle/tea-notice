@@ -1,6 +1,9 @@
 /* components/notifications/styles/NotificationList.css */
+.main{
+  margin-top: 2rem;
+}
+
 .notificationContainer {
-  max-width : 700px;
   margin-inline: auto;
   gap: 1rem;
   padding: 1rem 0;
@@ -8,7 +11,7 @@
 
 .notificationItem {
   display: grid;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 8fr 2fr;
   gap: 0.5rem;
   padding: 1.5rem;
   border: 1px solid #e2e8f0;
@@ -19,7 +22,7 @@
 }
 
 .notificationItem:hover {
-  border-color: #3182ce;
+  border-color: #62856E;
   background-color: #f8fafc;
 }
 
@@ -135,4 +138,45 @@
   margin: 2rem 0;
   font-size: 1.125rem;
   gap: 2rem;
+}
+
+
+/* 검색 CSS 영역 */
+.notificationSearchContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  margin-inline: auto;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #62856E;
+  background-color: #ffffff;
+  padding: 0 2rem;
+
+  input[type="search"]{
+    border :none;
+    width: 300px;
+    font-size: 1.125rem;
+    
+    &:focus{
+      border: none;
+      outline: none;
+    }
+  }
+
+  button{
+    background:none;
+    border: none;
+    color : #62856E;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+}
+
+
+/* 총 건 수 CSS */
+.notificationTotalNumber{
+  margin-top: 2rem;
 }

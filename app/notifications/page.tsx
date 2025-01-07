@@ -4,7 +4,7 @@ import ServerPagination from "@/components/notificiations/ServerPagination";
 import { getNotifications } from "@/lib/query/notification";
 import { Suspense } from "react";
 import Loading from "../loading";
-
+import styles from "@/components/notificiations/styles/NotificationList.module.css"
 
 export default async function Notification({
   searchParams,
@@ -31,10 +31,14 @@ export default async function Notification({
 
 
 return(
-  <main>
-    <h1></h1>
+  <main
+    className={styles.main}
+  >
+
     <SearchForm />
-    <div>
+    <div
+      className={styles.notificationTotalNumber}
+    >
       총 {totalCount} 건
     </div>
     <Suspense fallback={<Loading />}>
