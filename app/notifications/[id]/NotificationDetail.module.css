@@ -1,0 +1,171 @@
+/* app/notifications/[id]/NotificationDetail.module.css */
+.detailContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.detailHeader {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.badge {
+  background-color: #007bff;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.category {
+  background-color: #f8f9fa;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+}
+
+.views, .date {
+  color: #666;
+}
+
+.content {
+  min-height: 300px;
+  line-height: 1.6;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.5rem;
+}
+
+.backButton {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.backButton:hover {
+  background-color: #e9ecef;
+}
+
+
+.detailContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.detailHeader {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+.content {
+  min-height: 300px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.actions {
+  padding-top: 2rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.direction{
+  display: inline-flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.navButton {
+  width: 100%;
+  text-decoration: none;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.navButton:hover {
+  background-color: #e9ecef;
+}
+
+.navLabel {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.navTitle {
+  color: #333;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listButton {
+  width: 100%;
+  padding :1rem 0;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.listButton:hover {
+  background-color: #e9ecef;
+}

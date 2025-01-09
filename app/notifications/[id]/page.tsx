@@ -1,0 +1,77 @@
+import { getAdjacentNotifications, getNotificationById } from "@/lib/query/notification";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import styles from "@/app/notifications/[id]/NotificationDetail.module.css";
+
+export default async function({
+  params,
+}:{
+  params : {id : string}
+}) {
+  const notification = await getNotificationById(params.id);
+  const { prev, next } = await getAdjacentNotifications(params.id);
+
+  if(!notification){
+    notFound();
+  }
+
+  return(
+    <main
+      className={styles.detailContainer}
+    >
+
+      <div
+        className={styles.detailHeader}
+      >
+        <div
+        className={styles.headerTop}
+        >
+          {notification.title}
+        </div>
+      </div>
+
+      {/* content area */}
+      <div
+        className={styles.content}
+        dangerouslySetInnerHTML={{__html: notification.content}}
+      >
+
+      </div>
+
+      <div
+        className={styles.actions}
+      >
+        <div className={styles.navigation}>
+          
+          <Link 
+            href="/notifications" 
+            className={styles.listButton}>
+            목록으로
+          </Link>
+          
+          
+        </div>
+        
+        <div
+          className={styles.direction}
+        >
+          {prev && (
+            <Link href={`/notifications/${prev.id}`} className={styles.navButton}>
+              <div className={styles.navLabel}>이전 글</div>
+              <div className={styles.navTitle}>{prev.title}</div>
+            </Link>
+          )}
+
+          {next && (
+            <Link href={`/notifications/${next.id}`} className={styles.navButton}>
+              <div className={styles.navLabel}>다음 글</div>
+              <div className={styles.navTitle}>{next.title}</div>
+            </Link>
+          )}
+
+        </div>
+      </div>
+
+    </main>
+  )
+}

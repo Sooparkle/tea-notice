@@ -59,3 +59,48 @@ export async function getNotificationById(id: string): Promise<Notification | nu
     throw error;
   }
 }
+
+
+
+export async function getAdjacentNotifications(id: string) {
+  try {
+    const supabase = await createClient();
+    
+    // 현재 게시물의 created_at 가져오기
+    const { data: currentNotification } = await supabase
+      .from('notifications')
+      .select('created_at')
+      .eq('id', id)
+      .single();
+
+    if (!currentNotification) return { prev: null, next: null };
+
+    // 이전 게시물 (더 최신 게시물)
+    const { data: prevNotification } = await supabase
+      .from('notifications')
+      .select('id, title')
+      .eq('status', 'published')
+      .gt('created_at', currentNotification.created_at)
+      .order('created_at', { ascending: true })
+      .limit(1)
+      .single();
+
+    // 다음 게시물 (더 오래된 게시물)
+    const { data: nextNotification } = await supabase
+      .from('notifications')
+      .select('id, title')
+      .eq('status', 'published')
+      .lt('created_at', currentNotification.created_at)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+
+    return {
+      prev: prevNotification || null,
+      next: nextNotification || null
+    };
+  } catch (error) {
+    console.error('Error in getAdjacentNotifications:', error);
+    return { prev: null, next: null };
+  }
+}
