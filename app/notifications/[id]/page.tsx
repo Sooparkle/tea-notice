@@ -3,13 +3,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "@/app/notifications/[id]/NotificationDetail.module.css";
 
+
 export default async function({
   params,
 }:{
-  params : {id : string}
+  params : Promise <{id : string}>
 }) {
-  const notification = await getNotificationById(params.id);
-  const { prev, next } = await getAdjacentNotifications(params.id);
+
+  const {id} = await params;
+  const notification = await getNotificationById(id);
+  const { prev, next } = await getAdjacentNotifications(id);
 
   if(!notification){
     notFound();
@@ -51,7 +54,7 @@ export default async function({
           
           
         </div>
-        
+
         <div
           className={styles.direction}
         >
