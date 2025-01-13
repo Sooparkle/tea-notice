@@ -1,4 +1,5 @@
 // components/Header.jsx
+import Link from "next/link"
 import styles from "./Header.module.css"
 
 export default function Header() {
@@ -6,10 +7,10 @@ export default function Header() {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <div className={styles.logo}>
-            <a href="/">Tea Diary</a>
+            <Link href="/">Tea Diary</Link>
           </div>
           <ul className={styles.navLinks}>
-            <li><a href="/notifications">게시판</a></li>
+            <li><Link href="/notifications">게시판</Link></li>
           </ul>
         </nav>
       </header>
