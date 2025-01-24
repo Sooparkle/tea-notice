@@ -24,7 +24,7 @@ export default function Footer() {
           <div className={styles.section}>
             <h4>Contact</h4>
             <ul>
-              <li>teateachda.official@gmail.com</li>
+              <li>teateachada.official@gmail.com</li>
               {/* <li>Instagram: @tea_diary</li> */}
             </ul>
           </div>
