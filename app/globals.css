@@ -3,8 +3,8 @@ html, body{
   padding : 0;
 }
 
-body {
-  max-width: 900px;
-  margin-inline: auto;
-  
+*{
+
+  box-sizing: border-box
+
 }
