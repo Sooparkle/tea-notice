@@ -49,7 +49,7 @@ export default function SearchForm() {
       onSubmit={handleSubmit}
     >
       <div
-      
+        className={styles.notificationSearchWrap}
       >
         <input 
         type="search"

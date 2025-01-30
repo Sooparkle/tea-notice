@@ -5,11 +5,25 @@ import styles from '@/components/notificiations/styles/NotificationList.module.c
 
 interface NotificationListProps {
   notifications: Notification[];
+  totalCount : number
 }
 
-export default function NotificationList({ notifications }: NotificationListProps) {
+export default function NotificationList({ notifications, totalCount }: NotificationListProps) {
+
   return (
+    <>
+    <div
+      className={styles.totalCount}
+    >
+      총 : {totalCount}
+    </div>
     <div className={styles.notificationContainer}>
+      <div
+        className={styles.notificationListHeader}
+      >
+        <p>제목</p>
+        <p>일자</p>
+      </div>
       {notifications.map((notification) => (
         <Link 
           href={`/notifications/${notification.id}`} 
@@ -31,9 +45,9 @@ export default function NotificationList({ notifications }: NotificationListProp
           <div className={styles.notificationMeta}>
 
             <div className={styles.notificationInfo}>
-              <span className={styles.notificationViews}>
+              {/* <span className={styles.notificationViews}>
                 조회수 {notification.view_count.toLocaleString()}
-              </span>
+              </span> */}
             
               <time className={styles.notificationDate}>
                 {new Date(notification.created_at).toLocaleDateString('ko-KR', {
@@ -54,5 +68,7 @@ export default function NotificationList({ notifications }: NotificationListProp
         </div>
       )}
     </div>
+
+    </>
   );
 }
