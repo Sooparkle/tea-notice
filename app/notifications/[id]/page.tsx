@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "@/app/notifications/[id]/NotificationDetail.module.css";
 
+export const runtime = 'edge';
 
-export default async function({
+export default async function NotificationPage({
   params,
 }:{
   params : Promise <{id : string}>

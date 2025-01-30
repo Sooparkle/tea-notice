@@ -6,6 +6,8 @@ import { Suspense } from "react";
 import Loading from "../loading";
 import styles from "@/components/notificiations/styles/NotificationList.module.css"
 
+export const runtime = 'edge';
+
 export default async function Notification({
   searchParams,
 }:{
@@ -36,13 +38,12 @@ return(
   >
 
     <SearchForm />
-    <div
-      className={styles.notificationTotalNumber}
-    >
-      총 {totalCount} 건
-    </div>
+    
     <Suspense fallback={<Loading />}>
-      <NotificationList notifications={notifications} />
+      <NotificationList 
+        notifications={notifications} 
+        totalCount={totalCount}
+        />
       <ServerPagination 
         currentPage={page} 
         totalPages={totalPages}

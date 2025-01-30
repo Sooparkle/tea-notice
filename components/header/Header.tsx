@@ -1,15 +1,13 @@
 // components/Header.jsx
 import Link from "next/link"
-import styles from "./Header.module.css"
+import styles from "./Header.module.css" 
 import { headers } from "next/headers";
 
-interface HeaderProps {
-  currentPath? : string
-}
 
-export default async function Header({ currentPath =" "} : HeaderProps) {
+export default async function Header( ) {
   const headerList = await headers();
   const pathname = headerList.get("x-invoke-path") || "";
+
 
   return (
       <header className={styles.header}>

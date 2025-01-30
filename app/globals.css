@@ -1,3 +1,11 @@
+:root{
+  --primary-color : #62856E;
+  --strong-color : #34483c;
+  --light-color : #a0b5a6;
+  
+  } 
+
+
 html, body{
   margin: 0;
   padding : 0;

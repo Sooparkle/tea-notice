@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { CSSProperties } from 'react';
 
+export const runtime = 'edge';
+
 export default function NotFound() {
   const container: CSSProperties = {
     display: "gird",
@@ -29,20 +31,6 @@ export default function NotFound() {
     color: "#666",
   };
 
-  const linkStyle: CSSProperties = {
-    fontSize: "1rem",
-    color: "#0070f3",
-    textDecoration: "none",
-    border: "1px solid #0070f3",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    transition: "background-color 0.3s ease, color 0.3s ease",
-  };
-
-  const linkHoverStyle: CSSProperties = {
-    backgroundColor: "#0070f3",
-    color: "#fff",
-  };
 
   return (
     <div style={container}>

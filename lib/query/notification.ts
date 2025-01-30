@@ -1,6 +1,6 @@
 // lib/query/notifications.ts
 import { createClient } from '@/lib/supabase/server'
-import { type NotificationFilter, type Notification } from '@/types/notification'
+import { type Notification } from '@/types/notification'
 
 export async function getNotifications({
   page = 1,
@@ -46,6 +46,9 @@ export async function getNotifications({
 export async function getNotificationById(id: string): Promise<Notification | null> {
   try {
     const supabase = await createClient();
+
+    // await incrementNotificationViews(id);
+
     const { data, error } = await supabase
       .from('notifications')
       .select('*')
@@ -60,6 +63,27 @@ export async function getNotificationById(id: string): Promise<Notification | nu
   }
 }
 
+
+// export async function incrementNotificationViews(id : string) : Promise<void>{
+//   try{
+    
+//     const supabase = await createClient();
+//     const { data, error} = await supabase
+//     .from('notifications')
+//     .update({ view_count: supabase.rpc('increment_column', { 
+//       table_name: 'notifications', 
+//       column_name: 'view_count', 
+//       row_id: id 
+//     }) })
+
+
+//     if(error) throw error;
+//     console.log("View count incremented for notification ID:",id)
+//   }catch (error){
+//     console.error('Error in incrementNotificationViews', error)
+//     throw error
+//   }
+// }
 
 
 export async function getAdjacentNotifications(id: string) {

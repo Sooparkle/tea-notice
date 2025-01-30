@@ -26,6 +26,7 @@ export default function ServerPagination({
           currentPage > 1 &&(
             <Link 
               href={`${baseUrl}?page=${currentPage - 1}`}
+              className={`${styles.paginationLink} ${styles.prev}`}
             >
               이전
             </Link>
@@ -38,7 +39,7 @@ export default function ServerPagination({
               return(
                 <span
                   key={`ellipsis-${pageNum}`}
-                  className=""
+                  className={styles.ellipsis}
                 >
                   ...
                 </span>
@@ -49,6 +50,9 @@ export default function ServerPagination({
               <Link
                 key={pageNum}
                 href={`${baseUrl}?page=${pageNum}`}
+                className={`${styles.paginationLink} ${
+                  pageNum === currentPage ? styles.active :""
+                }` }
               >
               {pageNum}
               </Link>
@@ -60,6 +64,7 @@ export default function ServerPagination({
           currentPage < totalPages &&(
             <Link
               href={`${baseUrl}?page=${currentPage + 1}`}
+              className={`${styles.paginationLink} ${styles.next}`}
             >
               다음
             </Link>
