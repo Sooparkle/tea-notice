@@ -1,9 +1,15 @@
 import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
 
-if (process.env.NODE_ENV === 'development') {
-  await setupDevPlatform()
+const initDevPlatform = async () => {
+  if (process.env.NODE_ENV === 'development') {
+    await setupDevPlatform()
+  }
 }
 
-/** @type {import('next').NextConfig} */
+// Execute the initialization
+initDevPlatform().catch(console.error)
+
+/** @type {import('next').NextConfig} */ 
 const nextConfig = {}
+
 export default nextConfig
