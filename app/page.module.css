@@ -29,10 +29,11 @@
   display: flex;
   gap : 1rem;
   width: 100%;
+  flex: 2;
 }
 
 .heroImageText{
-  min-width: 382px;
+  flex:1
 }
 
 .title {
