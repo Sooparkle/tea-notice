@@ -253,3 +253,10 @@
 .notificationTotalNumber{
   margin-top: 2rem;
 }
+
+
+@media (max-width : 768px) {
+  .notificationSearchContainer{
+    width : 280px;
+  }
+}

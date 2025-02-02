@@ -27,6 +27,9 @@ export default async function NotificationPage({
       <div
         className={styles.detailHeader}
       >
+        {notification.is_pinned && (
+          <span className={styles.notificationBadge}>공지</span>
+        )}
         <div
         className={styles.headerTop}
         >
