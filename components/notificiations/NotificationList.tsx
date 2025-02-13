@@ -35,12 +35,14 @@ export default function NotificationList({ notifications, totalCount }: Notifica
               {notification.is_pinned && (
                 <span className={styles.notificationBadge}>공지</span>
               )}
+              {notification.category && !notification.is_pinned && (
+              <span className={styles.notificationCategory}>{notification.category}
+              </span>
+            )}
               <p className={styles.notificationTitle}>{notification.title}</p>
             </div>
-            {notification.category && (
-              <span className={styles.notificationCategory}>{notification.category}</span>
-            )}
-          </div>
+            
+            </div>
           
           <div className={styles.notificationMeta}>
 
