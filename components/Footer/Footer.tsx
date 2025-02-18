@@ -1,4 +1,5 @@
 // components/Footer.tsx
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -11,14 +12,13 @@ export default function Footer() {
             <p>차와 함께하는 일상의 기록</p>
           </div>
           
-          {/* <div className={styles.section}>
+          <div className={styles.section}>
             <h4>Links</h4>
             <ul>
-              <li><Link href="/about">소개</Link></li>
-              <li><Link href="/contact">문의하기</Link></li>
               <li><Link href="/privacy">개인정보처리방침</Link></li>
+              <li><Link href="/term">약관동의</Link></li>
             </ul>
-          </div> */}
+          </div> 
 
           <div className={styles.section}>
             <h4>Contact</h4>
